@@ -6,7 +6,7 @@ function speakText(text) {
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.voice = window.speechSynthesis.getVoices()[3]
-  utterance.rate = 2
+  utterance.rate = 1.2
   window.speechSynthesis.speak(utterance);
 }
 
