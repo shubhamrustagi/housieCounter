@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     -webkit-user-select: none; 
     -ms-user-select: none; 
@@ -51,13 +51,14 @@
 
 }
 @media (min-width: 601px){
+  
   body {
     display: flex;
     font-family: 'Poppins', sans-serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     -webkit-user-select: none; 
     -ms-user-select: none; 
