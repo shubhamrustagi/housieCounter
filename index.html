@@ -17,32 +17,18 @@
   <div class="grid-container" id="gridContainer"></div>
   <button id = "new-num-btn">Click for new number</button>
   <button id = "restart-btn">Restart?</button>
-  <script src="./index.js"></script>
+  
   <script>
     if ('serviceWorker' in navigator) {
-      
-      window.addEventListener('load', async () => {
-        
-        try {
-          
-          let reg;
-
-          
-          if (import.meta.env?.DEV) {
-            reg = await navigator.serviceWorker.register('/service-worker.js', {
-              type: 'module',
-            });
-          } else {
-            
-            reg = await navigator.serviceWorker.register('/service-worker.js');
-          }
-
-          console.log('Service worker registered! 😎', reg);
-        } catch (err) {
-          console.log('😥 Service worker registration failed: ', err);
-        }
-      });
+      navigator.serviceWorker.register('./service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
     }
   </script>
+  <script src="./index.js"></script>
 </body>
 </html>

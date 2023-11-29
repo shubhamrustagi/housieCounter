@@ -1,27 +1,25 @@
 
-const cacheName = 'cache-v1';
-
-const precacheResources = ['/', '/index.html', '/style.css', '/index.js'];
-
+const CACHE_NAME = 'housie-cache';
+const PRECACHE_URLS = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/index.js',
+  '/images/letter-h.png'
+];
 
 self.addEventListener('install', (event) => {
-  console.log('Service worker install event!');
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(PRECACHE_URLS);
+    })
+  );
 });
-
-self.addEventListener('activate', (event) => {
-  console.log('Service worker activate event!');
-});
-
 
 self.addEventListener('fetch', (event) => {
-  console.log('Fetch intercepted for:', event.request.url);
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request);
-    }),
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
