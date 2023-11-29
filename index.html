@@ -20,13 +20,28 @@
   <script src="./index.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
+      
+      window.addEventListener('load', async () => {
+        
+        try {
+          
+          let reg;
+
+          
+          if (import.meta.env?.DEV) {
+            reg = await navigator.serviceWorker.register('./service-worker.js', {
+              type: 'module',
+            });
+          } else {
+            
+            reg = await navigator.serviceWorker.register('./service-worker.js');
+          }
+
+          console.log('Service worker registered! 😎', reg);
+        } catch (err) {
+          console.log('😥 Service worker registration failed: ', err);
+        }
+      });
     }
   </script>
 </body>
