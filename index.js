@@ -19,7 +19,7 @@ for (let i = 1; i <= 90; i++) {
     gridContainer.appendChild(gridItem);
 }
 
-
+const numArr = ['zero','one','two','three','four','five','six','seven','eight','nine']
 var arr = [];
 let count = 0;
 for(let i = 0 ; i < 90 ; i++){
@@ -36,7 +36,7 @@ newNumBtn.addEventListener("click",()=>{
         clicked.classList.add("clicked-num")
         text = 
         actual > 9 
-        ? `${Math.floor(actual/10)} ${actual%10} ${actual}` 
+        ? `${numArr[Math.floor(actual/10)]} ${numArr[actual%10]} ${actual}` 
         : `Only number ${actual}`
         
         
