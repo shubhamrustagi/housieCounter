@@ -1,6 +1,6 @@
 {
   "name": "Housie Number Caller",
-  "short_name": "Housie Number Caller",
+  "short_name": "Housie Counter",
   "description": "Calls out the number and keeps track of the numbers copleted while playing housie",
   "start_url": "/",
   "display": "standalone",
