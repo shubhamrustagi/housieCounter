@@ -6,7 +6,7 @@ function speakText(text) {
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.voice = window.speechSynthesis.getVoices()[3]
-  utterance.rate = 1.2
+  utterance.rate = 1
   window.speechSynthesis.speak(utterance);
 }
 
@@ -39,9 +39,7 @@ newNumBtn.addEventListener("click",()=>{
         ? `${Math.floor(actual/10)} ${actual%10} ${actual}` 
         : `Only number ${actual}`
         
-        if(actual === 69){
-            text = "ultaa poolta 69"
-        }
+        
         speakText(text)
         
         arr[rand] = true;
