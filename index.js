@@ -36,7 +36,7 @@ newNumBtn.addEventListener("click",()=>{
         clicked.classList.add("clicked-num")
         text = 
         actual > 9 
-        ? `"'${Math.floor(actual/10)} ${actual%10}' ${actual}"` 
+        ? `${Math.floor(actual/10)} ${actual%10} ${actual}` 
         : `Only number ${actual}`
         
         if(actual === 69){
