@@ -1,0 +1,105 @@
+@media (max-width: 600px) {
+  body {
+    display: flex;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1px;
+  }
+
+  .grid-item{
+    display: flex;
+    color: beige;
+    font-size: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 1.75rem;
+    width:  1.75rem;
+    background-color: blueviolet;
+  }
+  button{
+    margin-top: 1rem;
+    height: 4.5rem;
+    width: 50%;
+    font-size: 150%;
+    font-family: 'Poppins', sans-serif;
+  }
+  .clicked-num{
+    display: flex;
+    color: black;
+    font-size: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 1.75rem;
+    width:  1.75rem;
+    background-color: yellow;
+  }
+
+}
+@media (min-width: 601px){
+  body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+  }
+
+  .grid-item {
+    display: flex;
+    color: beige;
+    font-size: 200%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: blueviolet;
+  }
+
+  button{
+    margin-top: 20px;
+    height: 80px;
+    width: 200px;
+    font-size: 150%;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .clicked-num{
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    font-size: 200%;
+    background-color: yellow;
+  }
+}
+
