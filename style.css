@@ -29,7 +29,7 @@
     height: 1.75rem;
     width:  1.75rem;
     background-color: blueviolet;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 500ms, background-color 500ms;
   }
   button{
     margin-top: 1rem;
@@ -75,7 +75,7 @@
     height: 50px;
     width: 50px;
     background-color: blueviolet;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 500ms, background-color 500ms;
   }
 
   button{
