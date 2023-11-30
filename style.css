@@ -29,6 +29,7 @@
     height: 1.75rem;
     width:  1.75rem;
     background-color: blueviolet;
+    transition: color 0.3s, background-color 0.3s;
   }
   button{
     margin-top: 1rem;
@@ -37,15 +38,8 @@
     font-size: 150%;
     font-family: 'Poppins', sans-serif;
   }
-  .clicked-num{
-    display: flex;
+  .grid-item.clicked-num{
     color: black;
-    font-size: 100%;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    height: 1.75rem;
-    width:  1.75rem;
     background-color: yellow;
   }
 
@@ -81,6 +75,7 @@
     height: 50px;
     width: 50px;
     background-color: blueviolet;
+    transition: color 0.3s, background-color 0.3s;
   }
 
   button{
@@ -91,15 +86,8 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  .clicked-num{
-    display: flex;
+  .grid-item.clicked-num{
     color: black;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
-    font-size: 200%;
     background-color: yellow;
   }
 }
