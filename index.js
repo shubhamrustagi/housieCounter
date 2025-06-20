@@ -5,8 +5,8 @@ const restartBtn = document.getElementById("restart-btn");
 function speakText(text) {
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.voice = voices.find(v => v.lang === 'en-IN') || voices[0];
-  utterance.rate = 0.4
+  utterance.voice = window.speechSynthesis.getVoices()[3]
+  utterance.rate = 1
   window.speechSynthesis.speak(utterance);
 }
 
