@@ -36,7 +36,7 @@ newNumBtn.addEventListener("click",()=>{
         clicked.classList.add("clicked-num")
         text = 
         actual > 9 
-        ? `${numArr[Math.floor(actual/10)]} ${numArr[actual%10]} ${actual}` 
+        ? `${numArr[Math.floor(actual/10)]} , ${numArr[actual%10]} ... ${actual}` 
         : `Only number ${actual}`
         
         
@@ -50,17 +50,33 @@ newNumBtn.addEventListener("click",()=>{
     }
     
 })
-restartBtn.addEventListener("click",()=>{
-    arr = []
-    count = 0;
-    for(let i = 0 ; i < 90 ; i++){
-        arr.push(false);
-    }
-    for(let i = 1; i <= 90 ; i++){
-        const numClicked = document.getElementById(`number${i}`)
-        numClicked.classList.remove("clicked-num")
-    }
-})
+function doRestart() {
+arr = Array(90).fill(false);
+count = 0;
+
+for (let i = 1; i <= 90; i++) {
+    document.getElementById(`number${i}`).classList.remove("clicked-num");
+}
+speakText("Game has been restarted");
+}
+
+// === modal elements ===
+const modal = document.getElementById("restart-modal");
+const yesBtn = document.getElementById("confirm-yes");
+const noBtn  = document.getElementById("confirm-no");
+
+restartBtn.addEventListener("click", () => {
+modal.classList.remove("hidden");        // show modal
+});
+
+yesBtn.addEventListener("click", () => {
+modal.classList.add("hidden");           // hide modal
+doRestart();                             // perform restart
+});
+
+noBtn.addEventListener("click", () => {
+modal.classList.add("hidden");           // just hide
+});
 
 
 
