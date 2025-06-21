@@ -1,48 +1,93 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+
+
+
+/* ===== Modal (Common Styles) ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  width: 90%;
+  max-width: 400px;
+}
+
+.btn-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-row button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#confirm-yes {
+  background-color: #ff5252;
+  color: white;
+}
+
+#confirm-no {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 600px) {
-  body {
+  h1 {
+    font-size: 1.4rem;
+  }
+  .main-content {
     display: flex;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0;
-    -webkit-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
   }
-  .modal {
-    position: fixed;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    backdrop-filter: blur(4px);
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 999;
-  }
-  
-  .modal.hidden {
-    display: none;
-  }
-  
-  .modal-box {
-    background: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    width: 90%;
-    max-width: 400px;
-  }
+
   .grid-container {
     display: grid;
+    margin-top: 3rem;
     grid-template-columns: repeat(10, 1fr);
     gap: 1px;
   }
 
-  .grid-item{
+  .grid-item {
     display: flex;
     color: beige;
     font-size: 100%;
@@ -50,66 +95,52 @@
     align-items: center;
     border: 1px solid black;
     height: 1.85rem;
-    width:  1.85rem;
+    width: 1.85rem;
     background-color: blueviolet;
     transition: color 500ms, background-color 500ms;
   }
-  button{
-    margin-top: 1rem;
+
+  button {
     height: 4.5rem;
     width: 50%;
     font-size: 150%;
+    margin-top: 1.5rem;
     font-family: 'Poppins', sans-serif;
   }
-  .grid-item.clicked-num{
+
+  .grid-item.clicked-num {
     color: black;
     background-color: yellow;
   }
-  h1{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-size:1.4rem;
+
+  .modal-box {
+    padding: 1rem;
+    font-size: 1rem;
   }
 
+  .btn-row button {
+    width: 100px;
+    font-size: 1rem;
+  }
 }
-@media (min-width: 601px){
-  
-  body {
+
+/* ===== DESKTOP STYLES ===== */
+@media (min-width: 601px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .main-content {
     display: flex;
-    font-family: 'Poppins', sans-serif;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0;
-    -webkit-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 1.5rem;
   }
-  .modal {
-    position: fixed;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    backdrop-filter: blur(4px);
-    background: rgba(0,0,0,0.35);
-    z-index: 999;
-  }
-  .modal.hidden { display: none; }
-  
-  /* === dialog box === */
-  .modal-box {
-    background: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-  }
+
   .grid-container {
     display: grid;
+    margin-top: 3rem;
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
   }
@@ -127,17 +158,17 @@
     transition: color 500ms, background-color 500ms;
   }
 
-  button{
+  button {
     margin-top: 20px;
     height: 80px;
     width: 200px;
     font-size: 150%;
+    margin-top: 1.5rem;
     font-family: 'Poppins', sans-serif;
   }
 
-  .grid-item.clicked-num{
+  .grid-item.clicked-num {
     color: black;
     background-color: yellow;
   }
 }
-
