@@ -49,8 +49,8 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    height: 1.75rem;
-    width:  1.75rem;
+    height: 1.85rem;
+    width:  1.85rem;
     background-color: blueviolet;
     transition: color 500ms, background-color 500ms;
   }
